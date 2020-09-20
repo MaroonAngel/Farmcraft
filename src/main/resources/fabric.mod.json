@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "farmcraft",
+  "version": "${version}",
+  "name": "Farmcraft",
+  "description": "Expanded farming for Minecraft",
+  "authors": [
+    "Vaerian"
+  ],
+  "contact": {
+    "homepage": "https://fabricmc.net/",
+    "sources": "https://github.com/Cumulus-Mods/Farmcraft"
+  },
+  "license": "MIT",
+  "icon": "assets/farmcraft/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.cumulus.farmcraft.Farmcraft"
+    ]
+  },
+  "mixins": [
+    "farmcraft.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.7.4",
+    "fabric": "*",
+    "minecraft": "1.16.x"
+  }
+}
