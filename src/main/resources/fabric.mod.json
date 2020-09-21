@@ -15,9 +15,8 @@
   "icon": "assets/farmcraft/icon.png",
   "environment": "*",
   "entrypoints": {
-    "main": [
-      "com.cumulus.farmcraft.Farmcraft"
-    ]
+    "main": ["com.cumulus.farmcraft.Farmcraft"],
+    "client": ["com.cumulus.farmcraft.init.ClientInit"]
   },
   "mixins": [
     "farmcraft.mixins.json"

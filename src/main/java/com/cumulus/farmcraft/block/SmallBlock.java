@@ -49,20 +49,11 @@ public class SmallBlock extends Block implements Waterloggable {
 
     }
 
-    private static VoxelShape method_24426(VoxelShape voxelShape, Boolean wallShape, VoxelShape voxelShape2, VoxelShape voxelShape3) {
-        if (wallShape) {
-            return VoxelShapes.union(voxelShape, voxelShape3);
-        } else {
-            return !wallShape ? VoxelShapes.union(voxelShape, voxelShape2) : voxelShape;
-        }
-    }
-
-
     @Override
     public void onPlaced(World world, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack itemStack) {
         for (Direction dir : Direction.values()) {
             if (world.getBlockState(pos.offset(dir)).getBlock() instanceof SmallBlock) {
-                world.setBlockState(pos.offset(dir), getStateForNeighborUpdate(state, dir.getOpposite(), world.getBlockState(pos), world, pos.offset(dir), pos));
+                world.setBlockState(pos.offset(dir), getStateForNeighborUpdate(world.getBlockState(pos.offset((dir))), dir.getOpposite(), world.getBlockState(pos), world, pos.offset(dir), pos));
             }
         }
     }
@@ -143,10 +134,6 @@ public class SmallBlock extends Block implements Waterloggable {
         return state.with(UP, up).with(DOWN, down).with(NORTH, north).with(SOUTH, south).with(EAST, east).with(WEST, west);
     }
 
-    private static boolean method_24424(BlockState blockState, BooleanProperty property) {
-        return blockState.get(property) != false;
-    }
-
     private static boolean method_24427(VoxelShape voxelShape, VoxelShape voxelShape2) {
         return !VoxelShapes.matchesAnywhere(voxelShape2, voxelShape, BooleanBiFunction.ONLY_FIRST);
     }
@@ -192,7 +179,7 @@ public class SmallBlock extends Block implements Waterloggable {
 
     private Boolean method_24428(boolean bl, VoxelShape voxelShape, VoxelShape voxelShape2) {
         if (bl) {
-            return method_24427(voxelShape, voxelShape2) ? true : false;
+            return method_24427(voxelShape, voxelShape2);
         } else {
             return false;
         }

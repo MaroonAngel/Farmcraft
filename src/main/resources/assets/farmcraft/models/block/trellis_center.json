@@ -1,0 +1,20 @@
+{
+    "textures": {
+        "particle": "#wall",
+		"wall": "minecraft:block/oak_planks"
+    },
+    "elements": [
+        {   "from": [ 4, 4, 4 ],
+            "to": [ 12, 12, 12 ],
+            "faces": {
+                "down":  { "texture": "#wall" },
+                "up":    { "texture": "#wall" },
+                "north": { "texture": "#wall" },
+                "west":  { "texture": "#wall" },
+                "east":  { "texture": "#wall" },
+                "south":  { "texture": "#wall" }
+            },
+            "__comment": "wall"
+        }
+    ]
+}
