@@ -1,0 +1,7 @@
+{
+    "parent": "farmcraft:block/center_block",
+    "textures": {
+        "particle": "#vine",
+        "vine": "farmcraft:block/grapes_trellis_stage2"
+    }
+}

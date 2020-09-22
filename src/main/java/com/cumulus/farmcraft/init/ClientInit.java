@@ -1,5 +1,6 @@
 package com.cumulus.farmcraft.init;
 
+import com.cumulus.farmcraft.VinePlants;
 import com.cumulus.farmcraft.block.Blocks;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
@@ -11,6 +12,7 @@ import net.minecraft.client.render.RenderLayer;
 public class ClientInit implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
-        BlockRenderLayerMap.INSTANCE.putBlock(Blocks.GRAPE_TRELLIS, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(VinePlants.grapes.getBlock(), RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(Blocks.TRELLIS_BLOCK, RenderLayer.getCutout());
     }
 }

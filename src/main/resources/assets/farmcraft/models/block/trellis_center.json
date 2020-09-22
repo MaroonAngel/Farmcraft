@@ -1,7 +1,7 @@
 {
     "textures": {
         "particle": "#wall",
-		"wall": "minecraft:block/oak_planks"
+		"wall": "farmcraft:block/trellis_block"
     },
     "elements": [
         {   "from": [ 4, 4, 4 ],

@@ -83,7 +83,7 @@
         "east": false
       },
       "apply": {
-        "model": "farmcraft:block/grape_trellis_center",
+        "model": "farmcraft:block/grapes_trellis_center_stage0",
         "uvlock": true
       }
     },
@@ -92,7 +92,7 @@
         "up": "true"
       },
       "apply": {
-        "model": "farmcraft:block/grape_trellis_side",
+        "model": "farmcraft:block/grapes_trellis_side",
         "x": -90,
         "uvlock": true
       }
@@ -102,7 +102,7 @@
         "down": "true"
       },
       "apply": {
-        "model": "farmcraft:block/grape_trellis_side",
+        "model": "farmcraft:block/grapes_trellis_side",
         "x": 90,
         "uvlock": true
       }
@@ -112,7 +112,7 @@
         "north": "true"
       },
       "apply": {
-        "model": "farmcraft:block/grape_trellis_side",
+        "model": "farmcraft:block/grapes_trellis_side",
         "uvlock": true
       }
     },
@@ -121,7 +121,7 @@
         "east": "true"
       },
       "apply": {
-        "model": "farmcraft:block/grape_trellis_side",
+        "model": "farmcraft:block/grapes_trellis_side",
         "y": 90,
         "uvlock": true
       }
@@ -131,7 +131,7 @@
         "south": "true"
       },
       "apply": {
-        "model": "farmcraft:block/grape_trellis_side",
+        "model": "farmcraft:block/grapes_trellis_side",
         "y": 180,
         "uvlock": true
       }
@@ -141,7 +141,7 @@
         "west": "true"
       },
       "apply": {
-        "model": "farmcraft:block/grape_trellis_side",
+        "model": "farmcraft:block/grapes_trellis_side",
         "y": 270,
         "uvlock": true
       }

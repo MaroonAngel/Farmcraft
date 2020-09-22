@@ -2,31 +2,36 @@ package com.cumulus.farmcraft.block.trellis;
 
 import com.cumulus.farmcraft.block.Blocks;
 import me.sargunvohra.mcmods.autoconfig1u.shadowed.blue.endless.jankson.annotation.Nullable;
-import net.minecraft.block.Block;
+import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.client.render.RenderLayer;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.stat.Stats;
+import net.minecraft.state.property.IntProperty;
+import net.minecraft.state.property.Properties;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.Tickable;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
+import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
 
-import java.util.ArrayList;
 import java.util.Random;
-import java.util.List;
 
-public class VineTrellis extends TrellisBlock implements Tickable {
+public class VineBlock extends TrellisBlock implements Tickable {
 
+    public Identifier id;
 
-    public VineTrellis(Settings settings) {
-        super(settings.strength(0.5f));
+    public static final IntProperty AGE = Properties.AGE_3;
 
-
-
+    public VineBlock(Settings settings, Identifier id) {
+        super(settings);
+        this.id = id;
     }
 
     @Override
@@ -58,9 +63,9 @@ public class VineTrellis extends TrellisBlock implements Tickable {
     }
 
     public void spreadToNeighbors(BlockState state, ServerWorld world, BlockPos pos, Random random) {
-        if (random.nextInt(5) == 0) {
+        if (random.nextInt(2) == 0) {
             Direction dir = getRandomDirection(random.nextInt(6));
-            boolean free = world.getBlockState(pos.offset(dir)).getBlock() instanceof TrellisBlock && !(world.getBlockState(pos.offset(dir)).getBlock() instanceof VineTrellis);
+            boolean free = world.getBlockState(pos.offset(dir)).getBlock() instanceof TrellisBlock && !(world.getBlockState(pos.offset(dir)).getBlock() instanceof VineBlock);
 
             if (free) {
                 world.setBlockState(pos.offset(dir), state.getStateForNeighborUpdate(dir.getOpposite(), state, world, pos.offset(dir), pos));
@@ -86,5 +91,10 @@ public class VineTrellis extends TrellisBlock implements Tickable {
     @Override
     public void tick() {
 
+    }
+
+    public void register(Identifier id) {
+        Registry.register(Registry.BLOCK, id, this);
+        //this.entity = Registry.register(Registry.BLOCK_ENTITY_TYPE, id, BlockEntityType.Builder.create( () -> new VineBlockEntity(id), this).build(null));
     }
 }
